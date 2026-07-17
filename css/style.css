@@ -551,7 +551,7 @@ h6,
    CABECERA DE PÁGINAS INTERNAS
 ================================== */
 .sp-page-header {
-    padding-top: 50px; /* compensa el header fijo (~75px) + margen extra */
+    padding-top: 90px; /* compensa el header fijo (~75px) + margen extra */
     padding-bottom: 2rem;
     text-align: center;
     background: var(--bg-dark);
@@ -1036,14 +1036,36 @@ h6,
 
 @media (max-width: 991px) {
     .sp-navbar {
-        padding: 1rem;
+        padding: 0.6rem 1rem;
+        flex-wrap: nowrap; /* Evita que el carrito se caiga a la siguiente línea */
+        align-items: center;
+    }
+
+    /* En mobile el carrito va a la derecha del toggler, no se cae */
+    .sp-nav-actions {
+        margin-left: auto;
+        order: 2; /* Entre brand (0) y toggler (3) */
+    }
+
+    .navbar-toggler.sp-toggler {
+        order: 3;
+        margin-left: 8px;
+    }
+
+    .navbar-brand.sp-brand {
+        order: 1;
+    }
+
+    /* El menú colapsado va debajo de todo */
+    .collapse.navbar-collapse {
+        order: 4;
+        flex-basis: 100%;
     }
 
     .sp-cart-link {
         position: relative;
         right: 0;
         transform: none;
-        margin-top: 15px;
         display: inline-block;
     }
 
@@ -1065,6 +1087,91 @@ h6,
         width: 90%;
         padding: 1.5rem;
         bottom: 10%;
+    }
+
+    /* Página de detalles: imagen y info apiladas correctamente */
+    .sp-detail-info {
+        padding: 1.5rem;
+    }
+
+    /* Formulario: botones en columna en mobile */
+    .sp-form .d-flex.gap-3.justify-content-end {
+        flex-direction: column;
+    }
+    .sp-form .d-flex.gap-3.justify-content-end .sp-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Página de cabecera interna: más padding-top para el navbar fijo */
+    .sp-page-header {
+        padding-top: 80px;
+    }
+
+    /* Producto imagen: altura menor en mobile para no ocupar toda la pantalla */
+    .sp-product-img-box {
+        height: 220px;
+    }
+
+    /* Botones del carrito y productos: en columna */
+    .sp-btn {
+        padding: 12px 24px;
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* Tabla del carrito: scroll horizontal para no desbordarse */
+    .sp-cart-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sp-cart-table {
+        min-width: 480px;
+    }
+
+    /* Botones de acción del carrito */
+    .container .text-center.mt-4 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .container .text-center.mt-4 .sp-btn {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    /* Sección de noticias: asegura que las cards no desborden */
+    .sp-news-card {
+        width: 100%;
+    }
+
+    /* Lever: más pequeño en mobile muy chico */
+    .sp-lever-wrapper {
+        bottom: 15px;
+        right: 15px;
+        transform: scale(0.7);
+        transform-origin: bottom right;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero subtitle más pequeño */
+    .sp-subtitle {
+        font-size: 0.95rem;
+    }
+
+    /* Brand text más compacto */
+    .brand-text {
+        font-size: 1rem;
+    }
+
+    /* Grilla de detalles: galería en 2 columnas */
+    #galleryContainer .col-sm-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 }
 
