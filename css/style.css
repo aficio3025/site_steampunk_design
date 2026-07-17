@@ -289,7 +289,7 @@ h6,
 
 .sp-caption {
     z-index: 2;
-    /* Centrado vertical en lugar de anclado al fondo */
+    /* Centrado vertical */
     top: 50%;
     bottom: auto;
     transform: translateY(-50%);
@@ -297,6 +297,20 @@ h6,
     left: 10%;
     right: 10%;
     width: 80%;
+}
+
+/* En mobile el hero ocupa la pantalla menos el navbar fijo (~68px) */
+@media (max-width: 991px) {
+    .sp-hero {
+        height: calc(100vh - 68px);
+        min-height: 500px;
+        margin-top: 68px;
+    }
+
+    .sp-hero-img {
+        height: calc(100vh - 68px);
+        min-height: 500px;
+    }
 }
 
 .sp-title {
@@ -1089,7 +1103,7 @@ h6,
         right: 5%;
         width: 90%;
         padding: 1.5rem;
-        /* Mantener centrado vertical en mobile */
+        /* Mantener centrado vertical */
         top: 50%;
         bottom: auto;
         transform: translateY(-50%);
