@@ -568,11 +568,16 @@ h6,
    CABECERA DE PÁGINAS INTERNAS
 ================================== */
 .sp-page-header {
-    padding-top: 90px; /* compensa el header fijo (~75px) + margen extra */
+    padding-top: 140px; /* navbar fijo (~70px) + borde (3px) + margen generoso */
     padding-bottom: 2rem;
     text-align: center;
     background: var(--bg-dark);
     border-bottom: 1px solid rgba(184, 115, 51, 0.2);
+}
+
+/* Asegura que el título no quede tapado por el navbar en ningún caso */
+.sp-page-header .sp-title {
+    position: relative;
 }
 
 .sp-page-title-container {
@@ -1146,9 +1151,9 @@ h6,
 }
 
 @media (max-width: 767px) {
-    /* Página de cabecera interna: más padding-top para el navbar fijo */
+    /* Página de cabecera interna: más padding-top para el navbar fijo en mobile */
     .sp-page-header {
-        padding-top: 80px;
+        padding-top: 150px;
     }
 
     /* Producto imagen: altura menor en mobile para no ocupar toda la pantalla */
