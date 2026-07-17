@@ -891,7 +891,7 @@ h6,
 
 /* Ensure navbar is higher than the smoke */
 .sp-header {
-    position: relative;
+    position: fixed; /* Mantiene el header fijo — no sobreescribir con relative */
     z-index: 1000;
 }
 
@@ -1031,11 +1031,15 @@ h6,
 
 #spNavbarContent.show {
     display: block;
-    padding: 1rem 0;
+    width: 100%;
+    padding: 0.8rem 0;
     border-top: 1px solid var(--copper-dark);
     margin-top: 0.5rem;
-    background: rgba(15, 10, 8, 0.95);
+    background: rgba(15, 10, 8, 0.97);
     backdrop-filter: blur(10px);
+    /* Asegura que no se salga de la pantalla */
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* Responsive adjustments */
@@ -1054,29 +1058,35 @@ h6,
 @media (max-width: 991px) {
     .sp-navbar {
         padding: 0.6rem 1rem;
-        flex-wrap: nowrap; /* Evita que el carrito se caiga a la siguiente línea */
+        flex-wrap: wrap; /* Permite que el menú colapsado baje a la siguiente línea */
         align-items: center;
     }
 
-    /* En mobile el carrito va a la derecha del toggler, no se cae */
+    /* Brand a la izquierda */
+    .navbar-brand.sp-brand {
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    /* Carrito y toggler a la derecha, en la misma fila que el brand */
     .sp-nav-actions {
+        order: 2;
         margin-left: auto;
-        order: 2; /* Entre brand (0) y toggler (3) */
+        flex-shrink: 0;
     }
 
     .navbar-toggler.sp-toggler {
         order: 3;
         margin-left: 8px;
+        flex-shrink: 0;
     }
 
-    .navbar-brand.sp-brand {
-        order: 1;
-    }
-
-    /* El menú colapsado va debajo de todo */
-    .collapse.navbar-collapse {
+    /* El menú colapsado ocupa toda la fila de abajo */
+    .collapse.navbar-collapse,
+    .navbar-collapse {
         order: 4;
         flex-basis: 100%;
+        width: 100%;
     }
 
     .sp-cart-link {
@@ -1086,9 +1096,21 @@ h6,
         display: inline-block;
     }
 
-    .sp-nav-links .nav-item {
-        margin: 10px 0;
+    /* Links del menú centrados y sin overflow */
+    .sp-nav-links {
+        width: 100%;
         text-align: center;
+    }
+
+    .sp-nav-links .nav-item {
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    /* Dropdown centrado en mobile */
+    .sp-dropdown-menu {
+        text-align: center;
+        width: 100%;
     }
 
     .sp-title {
@@ -1103,13 +1125,12 @@ h6,
         right: 5%;
         width: 90%;
         padding: 1.5rem;
-        /* Mantener centrado vertical */
         top: 50%;
         bottom: auto;
         transform: translateY(-50%);
     }
 
-    /* Página de detalles: imagen y info apiladas correctamente */
+    /* Página de detalles */
     .sp-detail-info {
         padding: 1.5rem;
     }
