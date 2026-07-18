@@ -94,6 +94,12 @@ h6,
     padding: 0.8rem 2rem;
 }
 
+/* El container-fluid es el contexto de posicionamiento para el carrito */
+.sp-navbar > .container-fluid {
+    position: relative;
+    flex-wrap: nowrap;
+}
+
 .sp-brand {
     display: flex;
     align-items: center;
@@ -203,11 +209,16 @@ h6,
 }
 
 /* Acciones de Navegación (Contenedor para Auth y Carrito) */
+.sp-navbar .navbar-collapse {
+    flex-grow: 1;
+}
+
 .sp-nav-actions {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: 15px;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 /* Icono del Carrito */
@@ -1638,4 +1649,26 @@ body.power-off::after {
 .sp-btn-link:hover {
     color: var(--brass-light) !important;
     text-shadow: var(--glow-brass);
+}
+
+/* ==================================
+   RESPONSIVE NAVBAR CARRITO
+================================== */
+
+/* En mobile el navbar-collapse ocupa toda la fila y el carrito se ubica antes */
+@media (max-width: 991px) {
+    .sp-navbar > .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .sp-navbar .navbar-collapse {
+        flex-grow: 0;
+        order: 10;
+        width: 100%;
+    }
+
+    .sp-nav-actions {
+        order: 2;
+        margin-left: auto;
+    }
 }
