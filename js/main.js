@@ -72,6 +72,10 @@ function handleCart() {
    let total = localStorage.getItem('total') || 0;
 
    const carritoContainer = document.getElementById('itemProducts');
+   if (!carritoContainer) return;
+   
+   // Limpiar el contenedor antes de renderizar para evitar duplicados
+   carritoContainer.innerHTML = '';
 
    if (cart.length === 0) {
       carritoContainer.innerHTML = '<p class="empty-cart-msg">No hay artefactos en su inventario.</p>';
@@ -137,13 +141,13 @@ function limpiarCarrito() {
 function updateCartCount() {
    const cartItems = JSON.parse(localStorage.getItem('productos')) || [];
    const countElements = document.getElementsByClassName('count');
-   if (countElements.length > 0) {
-      countElements[0].innerText = cartItems.length;
+   for (let i = 0; i < countElements.length; i++) {
+      countElements[i].innerText = cartItems.length;
    }
    // También actualizar el conteo en la nueva interfaz de usuario steampunk (si está presente)
    const cartCountElements = document.getElementsByClassName('cart-count');
-   if (cartCountElements.length > 0) {
-      cartCountElements[0].innerText = cartItems.length;
+   for (let i = 0; i < cartCountElements.length; i++) {
+      cartCountElements[i].innerText = cartItems.length;
    }
 }
 
