@@ -33,7 +33,7 @@ const productosDB = {
         titulo: "Soporte de celular con parlante bluetooth",
         precio: "55",
         descripcionCorta: "Es un soporte de celular realizado con madera dura, vidrio, caños de cobre y uniones en bronce.",
-        descripcionLarga: "La idea nació de la necesidad de fusionar un artefacto cotidiano (el celular) con una base sólida de madera torneada a mano, realzada por elementos de grifería antigua. (Modifica este texto).",
+        descripcionLarga: "La idea nació de la necesidad de fusionar un objeto cotidiano, como el teléfono celular, con una sólida base de madera. El resultado es una pieza única que combina funcionalidad, tecnología y diseño, inspirada en la estética de la era victoriana y el universo steampunk. Además de servir como soporte para el teléfono, incorpora un parlante Bluetooth integrado, alojado cuidadosamente dentro de un recipiente de vidrio, lo que le otorga una apariencia de antiguo instrumento científico o laboratorio de un inventor. La combinación de madera, vidrio y detalles metálicos transforma un dispositivo moderno en un auténtico objeto decorativo, ideal para disfrutar de la música mientras aporta un estilo inconfundible a cualquier ambiente.",
         videoYoutube: "",
         imagenPrincipal: "../assets/img-productos-decoracion/Parlante_Bluetooth_soporte.JPG",
         fotosGaleria: []
@@ -43,7 +43,7 @@ const productosDB = {
         titulo: "Reloj Cúpula de mesa",
         precio: "80",
         descripcionCorta: "Este reloj funciona como los antiguos reloles mecanicos a cuerda. Esta hecho en bronce, cobre, madera y vidrio.",
-        descripcionLarga: "Inspirado en las exhibiciones botánicas victorianas, este reloj se asienta protegido bajo su propia atmósfera de cristal.",
+        descripcionLarga: "Inspirado en las exhibiciones botánicas victorianas, este reloj se encuentra protegido bajo su propia atmósfera de cristal. Su diseño ha sido cuidadosamente concebido para que el reloj, junto con su armazón metálico, adquiera la delicada forma de una flor, evocando la belleza de la naturaleza reinterpretada a través de la estética steampunk.La combinación del vidrio, los detalles metálicos y la composición floral convierte esta pieza en mucho más que un reloj: es un objeto decorativo que fusiona la elegancia de la época victoriana con el ingenio mecánico, creando una obra única para quienes aprecian el arte y la imaginación.",
         videoYoutube: "https://www.youtube.com/watch?v=9qsOjhrpRRI",
         imagenPrincipal: "../assets/img-productos-decoracion/Reloj_cupula.jpg",
         fotosGaleria: []
@@ -52,7 +52,7 @@ const productosDB = {
         titulo: "Reloj mecánico de mesa con forma de flor",
         precio: "85",
         descripcionCorta: "Reloj antiguo a cuerda con armazón de bronce, montado en una estructura de cobre y madera dura",
-        descripcionLarga: "Hecho a partir de una estructura florar donde cada pétalo está cuidadosamente tallado. En el centro descansa un reloj auténtico a cuerda del periodo entreguerras.",
+        descripcionLarga: "Este reloj mecánico a cuerda combina la precisión de la relojería clásica con la belleza de un diseño inspirado en la naturaleza. El mecanismo se encuentra sostenido por una delicada estructura de cobre trabajada artesanalmente, cuya forma evoca una flor en plena apertura, convirtiendo la pieza en una verdadera escultura funcional.Cada detalle ha sido pensado para fusionar la elegancia victoriana con la estética steampunk, resaltando el contraste entre la calidez del cobre y el encanto de la mecánica tradicional. Más que un reloj, es una obra artesanal que celebra el paso del tiempo con personalidad, historia y un estilo inconfundible.",
         videoYoutube: "",
         imagenPrincipal: "../assets/img-productos-decoracion/Reloj_Flor.PNG",
         fotosGaleria: []
